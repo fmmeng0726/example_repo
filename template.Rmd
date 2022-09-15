@@ -31,9 +31,6 @@ ladfg <- tibble(sample_2 = rnorm(500, mean = 1),
 logic_var = sample_2 > 0,
 abs_var = abs(sample_2))
 
-ladfg %>%
-  ggplot() +
-  geom_histogram(mapping = aes(x = abs_var))
 ```
 
 
