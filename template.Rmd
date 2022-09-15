@@ -1,0 +1,41 @@
+---
+title: "Simple document"
+output: html_document
+---
+
+I'm an R Markdown document! 
+
+```{r, include= FALSE}
+library(tidyverse)
+library(dplyr)
+```
+
+
+# Section 1
+
+Here's a **code chunk** that samples from 
+a _normal distribution_:
+
+```{r}
+samp = rnorm(100)
+length(samp)
+```
+
+# Section 2
+
+I can take the mean of the sample, too!
+The mean is `r mean(samp)`.
+
+```{r}
+ladfg <- tibble(sample_2 = rnorm(500, mean = 1),
+logic_var = sample_2 > 0,
+abs_var = abs(sample_2))
+
+ladfg %>%
+  ggplot() +
+  geom_histogram(mapping = aes(x = abs_var))
+```
+
+
+
+
